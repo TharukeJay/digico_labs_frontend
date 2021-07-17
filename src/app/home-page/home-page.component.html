@@ -1,0 +1,109 @@
+
+<div style="border-radius: 15px 15px 15px 15px;width: 100%" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="width: 100%" role="document">
+    <div class="modal-content" style="border-radius: 15px 15px 15px 15px; width: 100%">
+      <div class="modal-header" style="background-color: #f3f3f3;border-radius: 15px 15px 0px 0px;">
+        <h5 class="modal-title" id="exampleModalLongTitle">Order Purchanse Home</h5>
+      </div>
+      <table style="text-align: center;width: 90%;">
+        <tr>
+          <th style="width: 10%;text-align: right;">
+            <input type="checkbox" id="item1" name="item" value="item" (change)="pakage1($event)">
+          </th>
+          <th style="width: 20%;text-align: left;">
+            <label class="itemqtybtn"  for="item1">Package 1</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <label class="itemqtybtn" style="    margin-left: 0px;"  for="item1">LKR 250</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <label class="itemqtybtn" style="    margin-left: 0px;"  for="item1">Qty :</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <input id="qty" type="text" class="input" [(ngModel)]="qtyP1" (keyup)="calculateP1()">
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <label class="itemqtybtn" style="margin-left: 0px;"  for="item1">Sub Total:</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <input id="subTotal" type="text" class="input" [(ngModel)]="subTotalP1"   disabled>
+          </th>
+        </tr>
+
+      </table>
+
+      <table style="text-align: center;width: 90%;">
+        <tr>
+          <th style="width: 10%;text-align: right;">
+            <input type="checkbox" id="item2" name="item" value="item" (change)="pakage2($event)">
+          </th>
+          <th style="width: 20%;text-align: left;">
+            <label class="itemqtybtn"  for="item2">Package 2</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <label class="itemqtybtn" style="    margin-left: 0px;"  for="item2">LKR 350</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <label class="itemqtybtn" style="    margin-left: 0px;"  for="item2">Qty :</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <input id="qty2" type="text" class="input" [(ngModel)]="qtyP2" (keyup)="calculateP2()">
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <label class="itemqtybtn" style="margin-left: 0px;"  for="item2">Sub Total:</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <input id="subTotal2" type="text" class="input" [(ngModel)]="subTotalP2"   disabled>
+          </th>
+        </tr>
+
+      </table>
+      <table style="text-align: center;width: 90%;">
+        <tr>
+          <th style="width: 10%;text-align: right;">
+            <input type="checkbox" id="item3" name="item" value="item" (change)="pakage3($event)">
+          </th>
+          <th style="width: 20%;text-align: left;">
+            <label class="itemqtybtn"  for="item3">Package 3</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <label class="itemqtybtn" style="    margin-left: 0px;"  for="item3">LKR 500</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <label class="itemqtybtn" style="    margin-left: 0px;"  for="item3">Qty :</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <input id="qty3" type="text" class="input" [(ngModel)]="qtyP3" (keyup)="calculateP3()">
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <label class="itemqtybtn" style="margin-left: 0px;"  for="item3">Sub Total:</label><br>
+          </th>
+          <th style="width: 20%;text-align: right;">
+            <input id="subTotal3" type="text" class="input" [(ngModel)]="subTotalP3"  disabled>
+          </th>
+        </tr>
+
+      </table>
+      <table style="text-align: center;width: 95%;">
+        <tr>
+          <th style="width: 76.5%;text-align: right;">
+            <label class="itemqtybtn" style="margin-left: 0px;"  for="item3">Total:</label><br>
+          </th>
+          <th style="width: 21.1%;text-align: left;">
+            <input id="Total" type="text" class="input" [(ngModel)]="Total"  disabled>
+          </th>
+        </tr>
+
+      </table>
+      <table style="text-align: center;width: 100%;">
+        <tr>
+          <th style="width: 25%;text-align: right;">
+           <button id="placeOrder" name="placeOrder" (click)="placeOrder()">Purchase</button>
+          </th>
+
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>

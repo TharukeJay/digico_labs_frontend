@@ -1,0 +1,23 @@
+<div style="border-radius: 15px 15px 15px 15px;" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 15px 15px 15px 15px;">
+      <div class="modal-header" style="background-color: #f3f3f3;border-radius: 15px 15px 0px 0px;">
+        <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+      </div>
+      <div class="modal-body">
+
+        <div class="new">
+          <input id="userName" type="text" class="input" placeholder="First Name"  [(ngModel)]="userName">
+        </div>
+        <div class="new">
+          <input id="password" type="text" class="input" placeholder="Last Name" [(ngModel)]="password">
+        </div>
+        <div class="modal-footer" style="border-radius: 15px 15px 15px 15px;">
+
+          <button id="parse" style="width: 100%; height: 30px;" type="button" class="popupFooterbtn" data-toggle="modal" type="submit"  (click)="Login()">Login</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

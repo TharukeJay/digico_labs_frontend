@@ -1,0 +1,57 @@
+<div style="border-radius: 15px 15px 15px 15px;" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 15px 15px 15px 15px;">
+      <div class="modal-header" style="background-color: #f3f3f3;border-radius: 15px 15px 0px 0px;">
+        <h5 class="modal-title" id="exampleModalLongTitle">Register</h5>
+      </div>
+      <div class="modal-body">
+
+        <div class="new">
+          <input id="firstName" type="text" class="input" placeholder="First Name"  [(ngModel)]="firstName">
+        </div>
+        <div class="new">
+          <input id="lastName" type="text" class="input" placeholder="Last Name" [(ngModel)]="lastName">
+        </div>
+        <div class="new">
+          <input id="email" type="email" name="user" class="input" placeholder="Email" [(ngModel)]="email">
+        </div>
+        <div class="new">
+          <input id="userName" type="text" name="user" class="input" placeholder="User Name" [(ngModel)]="userName">
+        </div>
+        <div class="new">
+          <input id="address" type="text" name="user" class="input" placeholder="Address" [(ngModel)]="address">
+        </div>
+        <div class="new">
+          <input id="password" type="password" name="user" class="input" placeholder="Password" [(ngModel)]="password">
+        </div>
+        <div class="new">
+          <input id="rePassword" type="password" name="user" class="input" placeholder="Retype Password" [(ngModel)]="rePassword">
+        </div>
+        <div class="new">
+          <input id="nicNumber" type="text" name="user" class="input" placeholder="NIC Number" [(ngModel)]="nicNumber">
+        </div>
+        <div class="new">
+          <input id="telephone" type="text" name="user" class="input" placeholder="Telephone/Mobile" [(ngModel)]="telephone">
+        </div>
+        <table style="width: 80%;">
+          <tr>
+            <th>
+               <input type="checkbox" id="terms" name="terms" value="terms" (click)="toogleTag($event)">
+            </th>
+            <th>
+               <label class="item1" >agree to Termst And Conditions</label><br>
+            </th>
+          </tr>
+
+        </table>
+
+      </div>
+      <div class="modal-footer" style="border-radius: 15px 15px 15px 15px;">
+
+        <button id="parse" style="width: 100%; height: 30px;" type="button" class="popupFooterbtn" data-toggle="modal" type="submit"  (click)="RegisterUser()">Register</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
