@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-
     const loginRequest = new login();
 
     loginRequest.password= this.password;
@@ -34,10 +33,15 @@ export class LoginComponent implements OnInit {
 
     this.service.LoginUser(loginRequest).subscribe(res => {
       console.log('res==>',res);
-      // localStorage.setItem('userId',res.user);
-      // localStorage.setItem('logged',res.logged);
-      // localStorage.setItem('isAdmin',res.isAdmin);
-      this.router.navigate(['/dash']);
+      if(res.message === 'Incorrect credentials'){
+        this.toastr.error('Incorrect Credentials');
+
+      }else {
+        localStorage.setItem('userId', res.userId);
+        localStorage.setItem('logged', res.logged);
+        localStorage.setItem('isAdmin', res.isAdmin);
+        this.router.navigate(['/dash']);
+      }
     });
 
   }

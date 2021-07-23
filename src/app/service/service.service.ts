@@ -15,23 +15,23 @@ export class ServiceService {
   }
 
   registerUser(registerUserDetails: User) {
-    return this.httpClient.post(this.resourceBaseUrl + '/api/register', registerUserDetails
+    return this.httpClient.post<any>(this.resourceBaseUrl + '/api/register', registerUserDetails
     )
   }
 
   LoginUser(loginRequest: login) {
 
-    return this.httpClient.post(this.resourceBaseUrl + '/api/login', loginRequest
+    return this.httpClient.post<any>(this.resourceBaseUrl + '/api/login', loginRequest
     )
   }
 
   OrderPurchase(orders: Orders){
-    return this.httpClient.post(this.resourceBaseUrl + '/api/'+localStorage.getItem('userId')+'/saveOrder', orders
+    return this.httpClient.post<any>(this.resourceBaseUrl + '/api/'+localStorage.getItem('userId')+'/saveOrder', orders
     )
   }
 
   OrderView(){
-    return this.httpClient.get(this.resourceBaseUrl + '/api/'+localStorage.getItem('userId')+'/getAllOrders'
+    return this.httpClient.get<any>(this.resourceBaseUrl + '/api/'+localStorage.getItem('userId')+'/getAllOrders'
     )
   }
 

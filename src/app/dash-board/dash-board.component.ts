@@ -11,6 +11,7 @@ export class DashBoardComponent implements OnInit {
   constructor(private service:ServiceService) { }
 
   ngOnInit(): void {
+
     this.service.OrderView().subscribe((res) => {
 
       console.log('new oneeeeee',res)

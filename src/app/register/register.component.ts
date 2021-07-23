@@ -54,9 +54,9 @@ export class RegisterComponent implements OnInit {
         }
         this.service.registerUser(registerUserDetails).subscribe(res => {
             console.log('res==>',res);
-            // localStorage.setItem('userId',res.user);
-            // localStorage.setItem('logged',res.logged);
-            // localStorage.setItem('isAdmin',res.isAdmin);
+            localStorage.setItem('userId',res.user);
+            localStorage.setItem('logged',res.logged);
+            localStorage.setItem('isAdmin',res.isAdmin);
             if(localStorage.getItem('Orders') != null ){
                 // this.service.OrderPurchase(localStorage.getItem('Orders')).subscribe(res => {
                 //   console.log('res==>',res);
@@ -73,11 +73,7 @@ export class RegisterComponent implements OnInit {
         const nicPattern = /^([0-9]{9}[x|X|v|V]|[0-9]{12})$/m;
         const CharPattern = /^[A-Z]{1,10}$/;
         const capitalChar = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
-        // console.log('userrole', this.userRole)
-        if (email === undefined) {
-            this.toastr.error('Please fill the Email');
-            return true;
-        }
+        console.log('address', address);
         if (firstName === undefined) {
             this.toastr.error('Please fill the first name');
             return true;
@@ -86,20 +82,40 @@ export class RegisterComponent implements OnInit {
             this.toastr.error('Please fill the last name');
             return true;
         }
+        if (email === undefined) {
+            this.toastr.error('Please fill the Email');
+            return true;
+        }
+        if (!email.match(pattern)) {
+            this.toastr.error('Please enter a valid email address');
+            return true;
+        }
         if (userName === undefined) {
             this.toastr.error('Please fill the username');
             return true;
         }
-        if (address === undefined) {
+        if (userName.length < 6) {
+            this.toastr.error('Please Enter At Least 6 Characters');
+            return true;
+        }
+        if (address === '' || address === undefined) {
             this.toastr.error('Please fill the address');
             return true;
         }
-        if (password === undefined) {
+        if (password === '' || password === undefined) {
             this.toastr.error('Cannot continue without password');
+            return true;
+        }
+        if (password.length < 8 && !password.match(CharPattern) &&  !password.match(capitalChar)) {
+            this.toastr.error('Please Enter Secure Password');
             return true;
         }
         if (rePassword === undefined) {
             this.toastr.error('Cannot continue without confirm password');
+            return true;
+        }
+        if (rePassword !== password) {
+            this.toastr.error('Passwords do not match');
             return true;
         }
         if (nicNumber === undefined) {
@@ -115,28 +131,10 @@ export class RegisterComponent implements OnInit {
             this.toastr.error('Cannot continue without Telephone Number');
             return true;
         }
-        if (telephone.toString().charAt(0) !== '0' || telephone.toString().length === 10) {
+        if (telephone.toString().charAt(0) != '0' || telephone.toString().length <10) {
             this.toastr.error('Cannot continue with This Phone Number');
             return true;
         }
-
-        if (rePassword !== password) {
-            this.toastr.error('Passwords do not match');
-            return true;
-        }
-        if (!email.match(pattern)) {
-            this.toastr.error('Please enter a valid email address');
-            return true;
-        }
-        if (userName.length < 6) {
-            this.toastr.error('Please Enter At Least 6 Characters');
-            return true;
-        }
-        if (password.length < 8 && !password.match(CharPattern) &&  !password.match(capitalChar)) {
-            this.toastr.error('Please Enter Secure Password');
-            return true;
-        }
-
     }
     toogleTag(e:any){
         if (e.target.checked) {

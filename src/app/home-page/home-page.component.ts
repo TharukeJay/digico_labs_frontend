@@ -93,7 +93,7 @@ export class HomePageComponent implements OnInit {
 
     if (localStorage.getItem('logged')){
       this.service.OrderPurchase(orders).subscribe(res => {
-        console.log('res==>',res);
+        console.log('orderRes==>',res);
       });
       this.router.navigate(['/dash']);
     } else {
